@@ -101,23 +101,23 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
   return (
     <>
       {showSuccess && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-white/80 backdrop-blur-sm">
           <div className="bg-gradient-to-br from-emerald-500/20 to-green-500/20 border border-emerald-500/50 rounded-2xl p-8 max-w-md mx-4 animate-in fade-in zoom-in duration-300">
             <div className="flex flex-col items-center text-center gap-4">
               <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center">
                 <CheckCircle2 className="w-10 h-10 text-emerald-400" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Meeting Booked!</h3>
-              <p className="text-gray-300">Thank you for booking. We'll get in contact with you soon.</p>
+              <h3 className="text-2xl font-bold text-black">Meeting Booked!</h3>
+              <p className="text-gray-700">Thank you for booking. We'll get in contact with you soon.</p>
             </div>
           </div>
         </div>
       )}
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-black border-gray-800">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white border-gray-300">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-white mb-2">{t("booking.title")}</DialogTitle>
-          <p className="text-gray-300">{t("booking.subtitle")}</p>
+          <DialogTitle className="text-2xl font-bold text-black mb-2">{t("booking.title")}</DialogTitle>
+          <p className="text-gray-700">{t("booking.subtitle")}</p>
         </DialogHeader>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
@@ -126,17 +126,17 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <CalendarDays className="w-5 h-5 text-emerald-500" />
-                <Label className="text-white font-medium">{t("booking.selectDate")}</Label>
+                <Label className="text-black font-medium">{t("booking.selectDate")}</Label>
               </div>
-              <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-700">
+              <div className="bg-gray-100/50 p-4 rounded-lg border border-gray-300">
                 {isMounted ? (
                   <React.Suspense
                     fallback={
                       <div className="animate-pulse">
-                        <div className="h-8 bg-gray-700 rounded mb-4"></div>
+                        <div className="h-8 bg-gray-300 rounded mb-4"></div>
                         <div className="grid grid-cols-7 gap-1">
                           {Array.from({ length: 42 }).map((_, i) => (
-                            <div key={i} className="h-9 bg-gray-700 rounded"></div>
+                            <div key={i} className="h-9 bg-gray-300 rounded"></div>
                           ))}
                         </div>
                       </div>
@@ -147,7 +147,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                       selected={selectedDate}
                       onSelect={setSelectedDate}
                       disabled={(date) => date < new Date() || date.getDay() === 0 || date.getDay() === 6}
-                      className="text-white w-full"
+                      className="text-black w-full"
                     />
                   </React.Suspense>
                 ) : (
@@ -166,15 +166,15 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Clock className="w-5 h-5 text-emerald-500" />
-                <Label className="text-white font-medium">{t("booking.selectTime")}</Label>
+                <Label className="text-black font-medium">{t("booking.selectTime")}</Label>
               </div>
               <Select value={selectedTime} onValueChange={setSelectedTime}>
-                <SelectTrigger className="bg-gray-900/50 border-gray-700 text-white">
+                <SelectTrigger className="bg-gray-100/50 border-gray-300 text-black">
                   <SelectValue placeholder={t("booking.chooseTime")} />
                 </SelectTrigger>
-                <SelectContent className="bg-gray-900 border-gray-700">
+                <SelectContent className="bg-gray-100 border-gray-300">
                   {timeSlots.map((time) => (
-                    <SelectItem key={time} value={time} className="text-white hover:bg-gray-800">
+                    <SelectItem key={time} value={time} className="text-black hover:bg-gray-200">
                       {time}
                     </SelectItem>
                   ))}
@@ -188,7 +188,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <User className="w-5 h-5 text-emerald-500" />
-                <Label htmlFor="name" className="text-white font-medium">
+                <Label htmlFor="name" className="text-black font-medium">
                   {t("booking.fullName")}
                 </Label>
               </div>
@@ -196,7 +196,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 id="name"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
-                className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                className="bg-gray-100/50 border-gray-300 text-black placeholder:text-gray-600"
                 placeholder={t("booking.enterName")}
                 required
               />
@@ -205,7 +205,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <Mail className="w-5 h-5 text-emerald-500" />
-                <Label htmlFor="email" className="text-white font-medium">
+                <Label htmlFor="email" className="text-black font-medium">
                   {t("booking.email")}
                 </Label>
               </div>
@@ -214,7 +214,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
-                className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                className="bg-gray-100/50 border-gray-300 text-black placeholder:text-gray-600"
                 placeholder={t("booking.enterEmail")}
                 required
               />
@@ -223,7 +223,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <Building className="w-5 h-5 text-emerald-500" />
-                <Label htmlFor="company" className="text-white font-medium">
+                <Label htmlFor="company" className="text-black font-medium">
                   {t("booking.company")}
                 </Label>
               </div>
@@ -231,7 +231,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 id="company"
                 value={formData.company}
                 onChange={(e) => handleInputChange("company", e.target.value)}
-                className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                className="bg-gray-100/50 border-gray-300 text-black placeholder:text-gray-600"
                 placeholder={t("booking.enterCompany")}
                 required
               />
@@ -240,7 +240,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <Phone className="w-5 h-5 text-emerald-500" />
-                <Label htmlFor="phone" className="text-white font-medium">
+                <Label htmlFor="phone" className="text-black font-medium">
                   Phone Number
                 </Label>
               </div>
@@ -249,7 +249,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => handleInputChange("phone", e.target.value)}
-                className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-400"
+                className="bg-gray-100/50 border-gray-300 text-black placeholder:text-gray-600"
                 placeholder="Enter your phone number"
                 required
               />
@@ -258,7 +258,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <MessageSquare className="w-5 h-5 text-emerald-500" />
-                <Label htmlFor="message" className="text-white font-medium">
+                <Label htmlFor="message" className="text-black font-medium">
                   {t("booking.message")}
                 </Label>
               </div>
@@ -276,7 +276,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 type="button"
                 variant="outline"
                 onClick={onClose}
-                className="flex-1 border-gray-700 text-gray-300 hover:bg-gray-800"
+                className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-200"
               >
                 {t("booking.cancel")}
               </Button>
@@ -290,7 +290,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   !formData.company ||
                   !formData.phone
                 }
-                className="flex-1 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white"
+                className="flex-1 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-black"
               >
                 {t("booking.bookMeeting")}
               </Button>
@@ -301,8 +301,8 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
         {/* Meeting Details Summary */}
         {selectedDate && selectedTime && (
           <div className="mt-6 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
-            <h4 className="text-emerald-400 font-medium mb-2">{t("booking.summary")}</h4>
-            <p className="text-gray-300 text-sm">
+            <h4 className="text-emerald-600 font-medium mb-2">{t("booking.summary")}</h4>
+            <p className="text-gray-700 text-sm">
               {selectedDate.toLocaleDateString("en-US", {
                 weekday: "long",
                 year: "numeric",

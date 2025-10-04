@@ -30,7 +30,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-white text-black relative overflow-hidden">
       {/* Enhanced mouse glow effect */}
       <div
         className="fixed hidden md:block pointer-events-none z-30 w-96 h-96 rounded-full opacity-40 transition-opacity duration-300"
@@ -45,7 +45,7 @@ export default function Home() {
 
       {/* Background pattern with enhanced green glow */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] bg-[size:20px_20px] opacity-30 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#ddd_1px,transparent_1px)] bg-[size:20px_20px] opacity-30 pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.35)_0,transparent_70%)] pointer-events-none" />
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-emerald-500/40 rounded-full blur-3xl animate-pulse" />
         <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-green-500/40 rounded-full blur-3xl animate-pulse" />
@@ -58,7 +58,7 @@ export default function Home() {
       {/* Header - Oval/Pill Shape with Animated Border */}
       <div className="container mx-auto px-4 py-6 relative z-10">
         <div className="max-w-5xl mx-auto relative">
-          <div className="md:animated-border-header bg-black/60 backdrop-blur-md md:rounded-full px-6 py-3 flex items-center justify-between">
+          <div className="md:animated-border-header bg-white/60 backdrop-blur-md md:rounded-full px-6 py-3 flex items-center justify-between">
             <div className="flex items-center">
               <h1 className="text-xl font-bold">
                 <span className="text-emerald-500">.</span>ENVAIRE
@@ -96,7 +96,7 @@ export default function Home() {
               <LanguageSelector />
               <button
                 onClick={() => setIsBookingOpen(true)}
-                className="animated-border px-4 py-1.5 bg-black/80 text-white text-sm rounded-full border border-gray-700/50 hover:border-emerald-500/50"
+                className="animated-border px-4 py-1.5 bg-white/80 text-black text-sm rounded-full border border-gray-300/50 hover:border-emerald-500/50"
               >
                 <span className="flex items-center gap-1">
                   {t("header.letsTalk")} <ArrowUpRight className="h-3.5 w-3.5" />
@@ -111,7 +111,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-16 pb-8 md:pt-32 md:pb-16 text-center relative z-10">
-        <div className="inline-block mb-8 px-3 py-1 bg-black/30 border border-gray-700 rounded-full text-sm">
+        <div className="inline-block mb-8 px-3 py-1 bg-white/30 border border-gray-300 rounded-full text-sm">
           <span
             className="inline-block w-2 h-2 rounded-full bg-green-500 shadow-lg shadow-green-500/50 mr-2 animate-pulse"
             style={{ boxShadow: "0 0 10px #10b981, 0 0 20px #10b981, 0 0 30px #10b981" }}
@@ -119,21 +119,21 @@ export default function Home() {
           {t("hero.online")}
         </div>
 
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-white to-emerald-200 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-black via-black to-emerald-800 bg-clip-text text-transparent">
           {t("hero.title")}{" "}
-          <span className="text-white inline-block relative">
-            <span className="absolute inset-0 text-emerald-400 blur-[1px] animate-pulse">✦</span>✦
+          <span className="text-black inline-block relative">
+            <span className="absolute inset-0 text-emerald-600 blur-[1px] animate-pulse">✦</span>✦
           </span>
         </h2>
-        <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-10 bg-gradient-to-r from-emerald-600 to-emerald-400 text-transparent bg-clip-text leading-relaxed py-2">
+        <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-10 bg-gradient-to-r from-emerald-700 to-emerald-500 text-transparent bg-clip-text leading-relaxed py-2">
           {t("hero.subtitle")}
         </h3>
 
-        <p className="max-w-2xl mx-auto text-gray-300 mb-10 text-lg">{t("hero.description")}</p>
+        <p className="max-w-2xl mx-auto text-gray-700 mb-10 text-lg">{t("hero.description")}</p>
 
         <button
           onClick={() => setIsBookingOpen(true)}
-          className="animated-border px-6 py-3 bg-black text-white mx-auto flex items-center gap-2"
+          className="animated-border px-6 py-3 bg-white text-black mx-auto flex items-center gap-2"
         >
           <span className="flex items-center gap-2">
             {t("hero.bookMeeting")} <ArrowUpRight className="h-4 w-4" />
@@ -142,7 +142,7 @@ export default function Home() {
 
         {/* Technologies Section */}
         <div className="mt-16">
-          <h4 className="text-gray-400 mb-10">{t("hero.technologies")}</h4>
+          <h4 className="text-gray-600 mb-10">{t("hero.technologies")}</h4>
           <div className="overflow-hidden whitespace-nowrap w-full">
             <div className="inline-block whitespace-nowrap animate-scroll">
               {/* First set of logos */}
@@ -151,42 +151,42 @@ export default function Home() {
                 alt="V0"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
               <Image
                 src="https://p1yf23hd3v.ufs.sh/f/NbmxJR2qtK0weF6iBr17iEyYc0WfFBNSRDrJ1HhKm5kVp2Os"
                 alt="OpenAI"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
               <Image
                 src="https://p1yf23hd3v.ufs.sh/f/NbmxJR2qtK0wXH5lgfyPVUy8GW1cwjqM30rQlfZ6dNoF7gmD"
                 alt="GitHub"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
               <Image
                 src="https://p1yf23hd3v.ufs.sh/f/NbmxJR2qtK0wfDWZl7JpGbCnBZE5HOWiQglsX37aLuDyRozf"
                 alt="n8n"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
               <Image
                 src="https://p1yf23hd3v.ufs.sh/f/NbmxJR2qtK0wBRF4pOsKX7SRmzq2rgZJ0hc8Osk5etdCuGoQ"
                 alt="Make"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
               <Image
                 src="https://p1yf23hd3v.ufs.sh/f/NbmxJR2qtK0w86YH9veBHw1WgKmlxQ3t9MJN7pF8zUanOEdR"
                 alt="Claude"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
 
               {/* Duplicate set for seamless scroll */}
@@ -195,42 +195,42 @@ export default function Home() {
                 alt="V0"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
               <Image
                 src="https://p1yf23hd3v.ufs.sh/f/NbmxJR2qtK0weF6iBr17iEyYc0WfFBNSRDrJ1HhKm5kVp2Os"
                 alt="OpenAI"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
               <Image
                 src="https://p1yf23hd3v.ufs.sh/f/NbmxJR2qtK0wXH5lgfyPVUy8GW1cwjqM30rQlfZ6dNoF7gmD"
                 alt="GitHub"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
               <Image
                 src="https://p1yf23hd3v.ufs.sh/f/NbmxJR2qtK0wfDWZl7JpGbCnBZE5HOWiQglsX37aLuDyRozf"
                 alt="n8n"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
               <Image
                 src="https://p1yf23hd3v.ufs.sh/f/NbmxJR2qtK0wBRF4pOsKX7SRmzq2rgZJ0hc8Osk5etdCuGoQ"
                 alt="Make"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
               <Image
                 src="https://p1yf23hd3v.ufs.sh/f/NbmxJR2qtK0w86YH9veBHw1WgKmlxQ3t9MJN7pF8zUanOEdR"
                 alt="Claude"
                 width={120}
                 height={40}
-                className="h-10 mx-10 inline-block brightness-0 invert hover:scale-110 transition-transform duration-300"
+                className="h-10 mx-10 inline-block brightness-0 hover:scale-110 transition-transform duration-300"
               />
             </div>
           </div>
@@ -243,11 +243,11 @@ export default function Home() {
       {/* Get Assessed CTA after Services */}
       <section className="container mx-auto px-4 py-16 relative z-10">
         <div className="text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">{t("cta1.title")}</h3>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">{t("cta1.description")}</p>
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">{t("cta1.title")}</h3>
+          <p className="text-gray-700 mb-8 max-w-2xl mx-auto">{t("cta1.description")}</p>
           <Button
             onClick={() => setIsBookingOpen(true)}
-            className="animated-border px-8 py-4 bg-black text-white text-lg font-medium"
+            className="animated-border px-8 py-4 bg-white text-black text-lg font-medium"
           >
             <span className="flex items-center gap-2">
               {t("cta1.button")} <ArrowUpRight className="h-5 w-5" />
@@ -262,11 +262,11 @@ export default function Home() {
       {/* Get Assessed CTA after Process */}
       <section className="container mx-auto px-4 py-16 relative z-10">
         <div className="text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">{t("cta2.title")}</h3>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">{t("cta2.description")}</p>
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">{t("cta2.title")}</h3>
+          <p className="text-gray-700 mb-8 max-w-2xl mx-auto">{t("cta2.description")}</p>
           <Button
             onClick={() => setIsBookingOpen(true)}
-            className="animated-border px-8 py-4 bg-black text-white text-lg font-medium"
+            className="animated-border px-8 py-4 bg-white text-black text-lg font-medium"
           >
             <span className="flex items-center gap-2">
               {t("cta2.button")} <ArrowUpRight className="h-5 w-5" />
@@ -276,12 +276,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="container mx-auto px-4 py-8 relative z-10 border-t border-gray-800">
+      <footer className="container mx-auto px-4 py-8 relative z-10 border-t border-gray-300">
         <div className="flex justify-center items-center gap-6">
-          <Link href="/terms" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
+          <Link href="/terms" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
             {t("footer.termsOfService")}
           </Link>
-          <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
+          <Link href="/privacy" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
             {t("footer.privacyPolicy")}
           </Link>
         </div>

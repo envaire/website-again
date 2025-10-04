@@ -47,10 +47,10 @@ export function ProcessSection() {
   return (
     <section id="process" className="container mx-auto px-4 py-16 md:py-24 relative z-10">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-black to-emerald-800 bg-clip-text text-transparent">
           {t("process.title")}
         </h2>
-        <p className="max-w-3xl mx-auto text-gray-300 text-xl">{t("process.description")}</p>
+        <p className="max-w-3xl mx-auto text-gray-700 text-xl">{t("process.description")}</p>
       </div>
 
       <div className="max-w-6xl mx-auto">
@@ -58,7 +58,7 @@ export function ProcessSection() {
         <div className="hidden md:block">
           {/* Connection Line */}
           <div className="relative mb-16">
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-700 -translate-y-1/2 rounded-full" />
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-300 -translate-y-1/2 rounded-full" />
             <div
               className="absolute top-1/2 left-0 h-1 bg-gradient-to-r from-emerald-500 to-green-500 -translate-y-1/2 rounded-full transition-all duration-500"
               style={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }}
@@ -77,18 +77,18 @@ export function ProcessSection() {
                   >
                     <div
                       className={`w-20 h-20 rounded-full border-4 flex items-center justify-center transition-all duration-500 ${
-                        isActive ? "border-emerald-500 bg-emerald-500/20 scale-110" : "border-gray-600 bg-black/80"
+                        isActive ? "border-emerald-500 bg-emerald-500/20 scale-110" : "border-gray-400 bg-white/80"
                       }`}
                       style={{
                         boxShadow: isActive ? "0 0 30px rgba(34, 197, 94, 0.5)" : "none",
                       }}
                     >
-                      <Icon className={`w-10 h-10 transition-colors ${isActive ? "text-emerald-400" : "text-gray-500"}`} />
+                      <Icon className={`w-10 h-10 transition-colors ${isActive ? "text-emerald-600" : "text-gray-600"}`} />
                     </div>
 
                     {/* Number badge */}
                     <div className={`absolute -top-2 -right-2 w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-bold transition-all ${
-                      isActive ? "border-emerald-500 bg-emerald-500 text-black" : "border-gray-600 bg-black text-gray-500"
+                      isActive ? "border-emerald-500 bg-emerald-500 text-white" : "border-gray-400 bg-white text-gray-600"
                     }`}>
                       {step.number}
                     </div>
@@ -109,7 +109,7 @@ export function ProcessSection() {
                     activeStep === index ? "opacity-100 scale-100" : "opacity-0 scale-95 absolute inset-0 pointer-events-none"
                   }`}
                 >
-                  <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-lg border-2 border-emerald-500/50 rounded-3xl p-10 relative overflow-hidden">
+                  <div className="bg-gradient-to-br from-white/60 to-white/40 backdrop-blur-lg border-2 border-emerald-500/50 rounded-3xl p-10 relative overflow-hidden">
                     <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-5`} />
                     <div className="absolute -top-20 -right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl" />
 
@@ -121,14 +121,14 @@ export function ProcessSection() {
                         </div>
 
                         <div className="flex-1">
-                          <h3 className="text-4xl font-bold text-white mb-4">{step.title}</h3>
-                          <p className="text-xl text-gray-300 mb-8 leading-relaxed">{step.description}</p>
+                          <h3 className="text-4xl font-bold text-black mb-4">{step.title}</h3>
+                          <p className="text-xl text-gray-700 mb-8 leading-relaxed">{step.description}</p>
 
                           <div className="grid grid-cols-2 gap-4">
                             {step.highlights.map((highlight, hIndex) => (
-                              <div key={hIndex} className="flex items-center gap-3 bg-black/40 rounded-xl p-4 border border-gray-700/50">
-                                <div className="w-2 h-2 rounded-full bg-emerald-500" style={{ boxShadow: "0 0 10px rgba(34, 197, 94, 0.8)" }} />
-                                <span className="text-gray-200">{highlight}</span>
+                              <div key={hIndex} className="flex items-center gap-3 bg-white/40 rounded-xl p-4 border border-gray-300/50">
+                                <div className="w-2 h-2 rounded-full bg-emerald-600" style={{ boxShadow: "0 0 10px rgba(34, 197, 94, 0.8)" }} />
+                                <span className="text-gray-800">{highlight}</span>
                               </div>
                             ))}
                           </div>
@@ -136,11 +136,11 @@ export function ProcessSection() {
                       </div>
 
                       {/* Navigation */}
-                      <div className="flex items-center justify-between mt-8 pt-8 border-t border-gray-700/50">
+                      <div className="flex items-center justify-between mt-8 pt-8 border-t border-gray-300/50">
                         <button
                           onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
                           disabled={activeStep === 0}
-                          className="text-gray-400 hover:text-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                          className="text-gray-600 hover:text-emerald-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
                         >
                           <ArrowRight className="rotate-180 w-5 h-5" />
                           Previous
@@ -151,7 +151,7 @@ export function ProcessSection() {
                             <div
                               key={idx}
                               className={`h-2 rounded-full transition-all ${
-                                idx === activeStep ? "w-8 bg-emerald-500" : "w-2 bg-gray-600"
+                                idx === activeStep ? "w-8 bg-emerald-600" : "w-2 bg-gray-400"
                               }`}
                             />
                           ))}
@@ -160,7 +160,7 @@ export function ProcessSection() {
                         <button
                           onClick={() => setActiveStep(Math.min(steps.length - 1, activeStep + 1))}
                           disabled={activeStep === steps.length - 1}
-                          className="text-gray-400 hover:text-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                          className="text-gray-600 hover:text-emerald-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
                         >
                           Next
                           <ArrowRight className="w-5 h-5" />
@@ -187,8 +187,8 @@ export function ProcessSection() {
                   isActive ? "scale-100" : "scale-95 opacity-60"
                 }`}
               >
-                <div className={`bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-lg border-2 rounded-3xl p-6 relative overflow-hidden ${
-                  isActive ? "border-emerald-500/50" : "border-gray-700"
+                <div className={`bg-gradient-to-br from-white/60 to-white/40 backdrop-blur-lg border-2 rounded-3xl p-6 relative overflow-hidden ${
+                  isActive ? "border-emerald-500/50" : "border-gray-300"
                 }`}>
                   <div className={`absolute inset-0 bg-gradient-to-br ${step.color} ${isActive ? "opacity-5" : "opacity-0"}`} />
 
@@ -198,18 +198,18 @@ export function ProcessSection() {
                         <Icon className="w-full h-full text-black" />
                       </div>
                       <div>
-                        <div className="text-sm text-emerald-400 font-bold mb-1">Step {step.number}</div>
-                        <h3 className="text-2xl font-bold text-white">{step.title}</h3>
+                        <div className="text-sm text-emerald-600 font-bold mb-1">Step {step.number}</div>
+                        <h3 className="text-2xl font-bold text-black">{step.title}</h3>
                       </div>
                     </div>
 
                     {isActive && (
                       <div className="mt-4 space-y-3">
-                        <p className="text-gray-300 leading-relaxed">{step.description}</p>
+                        <p className="text-gray-700 leading-relaxed">{step.description}</p>
                         <div className="space-y-2">
                           {step.highlights.map((highlight, hIndex) => (
-                            <div key={hIndex} className="flex items-center gap-2 text-sm text-gray-400">
-                              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                            <div key={hIndex} className="flex items-center gap-2 text-sm text-gray-600">
+                              <div className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                               {highlight}
                             </div>
                           ))}

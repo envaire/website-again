@@ -20,7 +20,7 @@ export default function TermsPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-white text-black relative overflow-hidden">
       {/* Mouse follower glow */}
       <div
         className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
@@ -31,7 +31,7 @@ export default function TermsPage() {
 
       {/* Background pattern with enhanced green glow */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] bg-[size:20px_20px] opacity-30 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#ddd_1px,transparent_1px)] bg-[size:20px_20px] opacity-30 pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.35)_0,transparent_70%)] pointer-events-none" />
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-emerald-500/40 rounded-full blur-3xl animate-pulse" />
         <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-green-500/40 rounded-full blur-3xl animate-pulse" />
@@ -42,7 +42,7 @@ export default function TermsPage() {
         {/* Back button */}
         <div className="mb-8">
           <Link href="/">
-            <Button variant="ghost" className="text-white hover:text-emerald-400 p-0">
+            <Button variant="ghost" className="text-black hover:text-emerald-600 p-0">
               <ArrowLeft className="h-4 w-4 mr-2" />
               {t("terms.backToHome")}
             </Button>
@@ -51,20 +51,20 @@ export default function TermsPage() {
 
         {/* Header */}
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-black to-emerald-800 bg-clip-text text-transparent">
             {t("terms.title")}
           </h1>
-          <p className="text-gray-400 mb-8">{t("terms.lastUpdated")}</p>
+          <p className="text-gray-600 mb-8">{t("terms.lastUpdated")}</p>
 
           {/* Content */}
           <div className="prose prose-invert max-w-none">
-            <div className="bg-black/40 border border-gray-800 rounded-lg p-8 space-y-6">
-              <p className="text-gray-300 leading-relaxed">{t("terms.welcome")}</p>
+            <div className="bg-white/40 border border-gray-300 rounded-lg p-8 space-y-6">
+              <p className="text-gray-700 leading-relaxed">{t("terms.welcome")}</p>
 
               <div className="space-y-6">
                 <section>
-                  <h2 className="text-2xl font-bold text-white mb-3">{t("terms.section1.title")}</h2>
-                  <p className="text-gray-300 leading-relaxed">{t("terms.section1.content")}</p>
+                  <h2 className="text-2xl font-bold text-black mb-3">{t("terms.section1.title")}</h2>
+                  <p className="text-gray-700 leading-relaxed">{t("terms.section1.content")}</p>
                 </section>
 
                 <section>
@@ -99,9 +99,9 @@ export default function TermsPage() {
 
                 <section>
                   <h2 className="text-2xl font-bold text-white mb-3">{t("terms.contact.title")}</h2>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     {t("terms.contact.content")}{" "}
-                    <a href="mailto:info@envaire.com" className="text-emerald-400 hover:text-emerald-300 underline">
+                    <a href="mailto:info@envaire.com" className="text-emerald-600 hover:text-emerald-700 underline">
                       info@envaire.com
                     </a>
                     .
@@ -113,12 +113,12 @@ export default function TermsPage() {
         </div>
 
         {/* Footer */}
-        <footer className="mt-16 border-t border-gray-800 pt-8">
+        <footer className="mt-16 border-t border-gray-300 pt-8">
           <div className="max-w-4xl mx-auto flex justify-center items-center gap-4">
-            <Link href="/terms" className="text-gray-400 hover:text-emerald-400 transition-colors">
+            <Link href="/terms" className="text-gray-600 hover:text-emerald-600 transition-colors">
               {t("footer.termsOfService")}
             </Link>
-            <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors">
+            <Link href="/privacy" className="text-gray-600 hover:text-emerald-600 transition-colors">
               {t("footer.privacyPolicy")}
             </Link>
           </div>

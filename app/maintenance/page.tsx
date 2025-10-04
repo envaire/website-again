@@ -28,7 +28,7 @@ export default function MaintenancePage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden flex items-center justify-center">
+    <div className="min-h-screen bg-white text-black relative overflow-hidden flex items-center justify-center">
       {/* Enhanced mouse glow effect */}
       <div
         className="fixed hidden md:block pointer-events-none z-30 w-96 h-96 rounded-full opacity-40 transition-opacity duration-300"
@@ -43,7 +43,7 @@ export default function MaintenancePage() {
 
       {/* Background pattern with enhanced green glow */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] bg-[size:20px_20px] opacity-30 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#ddd_1px,transparent_1px)] bg-[size:20px_20px] opacity-30 pointer-events-none" />
         <div className="absolute hidden md:block inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.25)_0,transparent_70%)] pointer-events-none" />
         <div className="absolute hidden md:block -top-40 -left-40 w-96 h-96 bg-emerald-900/30 rounded-full blur-3xl animate-pulse" />
         <div className="absolute hidden md:block top-1/3 -right-20 w-96 h-96 bg-emerald-900/30 rounded-full blur-3xl animate-pulse" />
@@ -75,7 +75,7 @@ export default function MaintenancePage() {
         </div>
 
         {/* Animated status indicator */}
-        <div className="inline-block mb-8 px-4 py-2 bg-black/30 border border-gray-700 rounded-full text-sm">
+        <div className="inline-block mb-8 px-4 py-2 bg-white/30 border border-gray-300 rounded-full text-sm">
           <span
             className="inline-block w-3 h-3 rounded-full bg-emerald-500 shadow-lg shadow-emerald-500/50 mr-3 animate-pulse"
             style={{ 
@@ -88,13 +88,13 @@ export default function MaintenancePage() {
 
         {/* Main message with typing animation */}
         <div className="mb-8">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-white to-emerald-200 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-black via-black to-emerald-800 bg-clip-text text-transparent">
             Website is being updated
             <span className="inline-block animate-pulse ml-2">...</span>
           </h2>
           
           {/* Animated loading bar */}
-          <div className="w-full max-w-md mx-auto bg-gray-800 rounded-full h-2 mb-6 overflow-hidden">
+          <div className="w-full max-w-md mx-auto bg-gray-300 rounded-full h-2 mb-6 overflow-hidden">
             <div 
               className="h-full bg-gradient-to-r from-emerald-600 to-green-400 rounded-full animate-pulse"
               style={{
@@ -105,7 +105,7 @@ export default function MaintenancePage() {
           </div>
         </div>
 
-        <p className="max-w-2xl mx-auto text-gray-300 mb-12 text-lg leading-relaxed">
+        <p className="max-w-2xl mx-auto text-gray-700 mb-12 text-lg leading-relaxed">
           We're working hard to bring you an even better experience. 
           <br />
         </p>

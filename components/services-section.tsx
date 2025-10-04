@@ -119,10 +119,10 @@ export function ServicesSection() {
   return (
     <section id="services" className="container mx-auto px-4 py-16 md:py-24 relative z-10">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-black to-emerald-800 bg-clip-text text-transparent">
           {t("services.title")}
         </h2>
-        <p className="max-w-3xl mx-auto text-gray-300 text-xl">{t("services.description")}</p>
+        <p className="max-w-3xl mx-auto text-gray-700 text-xl">{t("services.description")}</p>
       </div>
 
       <div className="max-w-7xl mx-auto">
@@ -138,7 +138,7 @@ export function ServicesSection() {
                 className={`relative p-4 rounded-2xl border-2 transition-all duration-300 group ${
                   isSelected
                     ? "border-emerald-500 bg-emerald-500/20 scale-105"
-                    : "border-gray-700 bg-black/40 hover:border-emerald-500/50 hover:bg-black/60"
+                    : "border-gray-300 bg-white/40 hover:border-emerald-500/50 hover:bg-white/60"
                 }`}
               >
                 <div className="flex flex-col items-center gap-2">
@@ -149,7 +149,7 @@ export function ServicesSection() {
                   >
                     <Icon className="w-full h-full text-black" />
                   </div>
-                  <span className={`text-xs font-semibold text-center ${isSelected ? "text-emerald-300" : "text-gray-400"}`}>
+                  <span className={`text-xs font-semibold text-center ${isSelected ? "text-emerald-700" : "text-gray-600"}`}>
                     {service.title.split(' ').slice(0, 2).join(' ')}
                   </span>
                 </div>
@@ -162,7 +162,7 @@ export function ServicesSection() {
         </div>
 
         {/* Featured Service Display */}
-        <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-lg border-2 border-emerald-500/50 rounded-3xl p-8 md:p-12 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-white/60 to-white/40 backdrop-blur-lg border-2 border-emerald-500/50 rounded-3xl p-8 md:p-12 overflow-hidden">
           {/* Animated background glow */}
           <div className={`absolute inset-0 bg-gradient-to-br ${selectedServiceData.color} opacity-5`} />
           <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl animate-pulse" />
@@ -180,8 +180,8 @@ export function ServicesSection() {
                 </div>
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">{selectedServiceData.title}</h3>
-              <p className="text-xl text-emerald-300 mb-6">{selectedServiceData.shortDesc}</p>
+              <h3 className="text-3xl md:text-4xl font-bold text-black mb-4">{selectedServiceData.title}</h3>
+              <p className="text-xl text-emerald-700 mb-6">{selectedServiceData.shortDesc}</p>
 
               {/* Stats */}
               <div className="flex items-center gap-8 mb-8">
@@ -189,7 +189,7 @@ export function ServicesSection() {
                   <div className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${selectedServiceData.color} bg-clip-text text-transparent`}>
                     {selectedServiceData.stat}
                   </div>
-                  <div className="text-sm text-gray-400 mt-1">{selectedServiceData.statLabel}</div>
+                  <div className="text-sm text-gray-600 mt-1">{selectedServiceData.statLabel}</div>
                 </div>
               </div>
 
@@ -205,27 +205,27 @@ export function ServicesSection() {
             {/* Right: Benefits & Features */}
             <div className="space-y-6">
               <div className="space-y-3">
-                <h4 className="text-emerald-400 font-semibold text-sm uppercase tracking-wide">Key Benefits</h4>
+                <h4 className="text-emerald-600 font-semibold text-sm uppercase tracking-wide">Key Benefits</h4>
                 {selectedServiceData.benefits.map((benefit, index) => (
                   <div
                     key={index}
-                    className="flex items-start gap-3 bg-black/40 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 hover:border-emerald-500/50 transition-all duration-300 group"
+                    className="flex items-start gap-3 bg-white/40 backdrop-blur-sm border border-gray-300/50 rounded-xl p-4 hover:border-emerald-500/50 transition-all duration-300 group"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                    <span className="text-gray-200 leading-relaxed">{benefit}</span>
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                    <span className="text-gray-800 leading-relaxed">{benefit}</span>
                   </div>
                 ))}
               </div>
 
               <div className="space-y-3">
-                <h4 className="text-emerald-400 font-semibold text-sm uppercase tracking-wide">What's Included</h4>
+                <h4 className="text-emerald-600 font-semibold text-sm uppercase tracking-wide">What's Included</h4>
                 <div className="grid grid-cols-1 gap-2">
                   {selectedServiceData.features.map((feature, index) => (
                     <div
                       key={index}
-                      className="flex items-center gap-3 text-gray-300 text-sm"
+                      className="flex items-center gap-3 text-gray-700 text-sm"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                       {feature}
                     </div>
                   ))}
