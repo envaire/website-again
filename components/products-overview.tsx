@@ -52,13 +52,13 @@ export function ProductsOverview() {
     <section id="services" className="container mx-auto px-4 py-16 md:py-24 relative z-10">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-black to-emerald-800 bg-clip-text text-transparent">
-          Productized AI Automation Solutions
+          Our main AI Agents
         </h2>
         <p className="max-w-3xl mx-auto text-gray-700 text-xl mb-8">
-          Ready-to-deploy AI automation solutions that work from day one. No complex setup, no endless meetings—just powerful automation that drives results.
+          Ready to deploy AI automation solutions that work from day one. No complex setup, no endless meetings, just powerful automation that drives results.
         </p>
         <p className="max-w-2xl mx-auto text-gray-600 text-lg">
-          Choose your tier, launch fast, and scale your business while our AI handles the repetitive work. Each solution comes with clear deliverables, transparent pricing, and a money-back guarantee.
+          Choose your tier, launch fast, and scale your business while our AI handles the repetitive work. Each solution comes with clear deliverables, transparent pricing, and a refund guarantee.
         </p>
       </div>
 
