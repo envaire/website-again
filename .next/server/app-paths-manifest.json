@@ -1,4 +1,5 @@
 {
   "/page": "app/page.js",
-  "/products/seo-blogs/page": "app/products/seo-blogs/page.js"
+  "/products/seo-blogs/page": "app/products/seo-blogs/page.js",
+  "/products/voice-agents/page": "app/products/voice-agents/page.js"
 }

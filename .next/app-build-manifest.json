@@ -15,6 +15,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/products/seo-blogs/page.js"
+    ],
+    "/products/voice-agents/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/products/voice-agents/page.js"
     ]
   }
 }
