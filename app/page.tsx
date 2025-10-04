@@ -4,7 +4,7 @@ import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { MobileMenu } from "@/components/mobile-menu"
 import { useState, useEffect } from "react"
-import { ServicesSection } from "@/components/services-section"
+import { ProductsOverview } from "@/components/products-overview"
 import { ProcessSection } from "@/components/process-section"
 import { BookingModal } from "@/components/booking-modal"
 import { Button } from "@/components/ui/button"
@@ -238,7 +238,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <ServicesSection />
+      <ProductsOverview />
 
       {/* Get Assessed CTA after Services */}
       <section className="container mx-auto px-4 py-16 relative z-10">
