@@ -1619,8 +1619,8 @@ video {
 .bg-white\/80 {
   background-color: rgb(255 255 255 / 0.8);
 }
-.bg-\[radial-gradient\(\#ddd_1px\2c transparent_1px\)\] {
-  background-image: radial-gradient(#ddd 1px,transparent 1px);
+.bg-\[radial-gradient\(\#999_1px\2c transparent_1px\)\] {
+  background-image: radial-gradient(#999 1px,transparent 1px);
 }
 .bg-\[radial-gradient\(circle_at_center\2c rgba\(34\2c 197\2c 94\2c 0\.25\)_0\2c transparent_70\%\)\] {
   background-image: radial-gradient(circle at center,rgba(34,197,94,0.25) 0,transparent 70%);
@@ -2346,7 +2346,7 @@ a {
 
 /* Custom dot pattern with glow */
 .dot-pattern {
-  background-image: radial-gradient(#ddd 1px, transparent 1px);
+  background-image: radial-gradient(#999 1px, transparent 1px);
   background-size: 20px 20px;
   position: relative;
 }
